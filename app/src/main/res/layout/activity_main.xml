@@ -45,6 +45,7 @@
                 android:orientation="horizontal">
 
                 <Spinner
+                    android:id="@+id/spinner"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical">
@@ -54,7 +55,7 @@
                 <EditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="https://example.com/get"
+                    android:hint="https://"
                     android:textColor="@color/color_text_not_activated"
                     android:textColorHint="#acacac" />
             </LinearLayout>
@@ -131,7 +132,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="40dp"
-                android:text="TEST REQUEST" />
+                android:text="JUST CLICK ME, URL  HARDCODED" />
 
             <ProgressBar
                 android:id="@+id/progress"
