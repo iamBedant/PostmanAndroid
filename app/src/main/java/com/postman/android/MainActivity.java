@@ -17,13 +17,12 @@ import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.DefaultRetryPolicy;
-import com.android.volley.NetworkResponse;
-import com.android.volley.NoConnectionError;
 import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.TimeoutError;
 import com.android.volley.VolleyError;
-import com.postman.android.Network.CustomRequest;
+import com.postman.android.Network.CustomRequestWithHeader;
+import com.postman.android.Network.ResponseModel;
 import com.postman.android.Network.VolleySingleton;
 
 import java.util.ArrayList;
@@ -42,6 +41,17 @@ public class MainActivity extends AppCompatActivity {
 
     @BindView(R.id.response)
     TextView mTextViewResponse;
+
+    @BindView(R.id.status_code)
+    TextView mTextViewStatusCode;
+
+    @BindView(R.id.time)
+    TextView mTextViewTime;
+
+
+    @BindView(R.id.headers)
+    TextView mTextViewHeaders;
+
     @BindView(R.id.spinner)
     Spinner mSpinner;
 
@@ -62,7 +72,7 @@ public class MainActivity extends AppCompatActivity {
         categories.add("DELETE");
         categories.add("COPY");
 
-        mSpinner.getBackground().setColorFilter(ContextCompat.getColor(mContext,R.color.colorAccent), PorterDuff.Mode.SRC_ATOP);
+        mSpinner.getBackground().setColorFilter(ContextCompat.getColor(mContext, R.color.colorAccent), PorterDuff.Mode.SRC_ATOP);
         ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, categories);
 
         // Drop down layout style - list view with radio button
@@ -74,35 +84,24 @@ public class MainActivity extends AppCompatActivity {
 
 
     @OnClick(R.id.btn_test)
-    public void sendRequest() {
+    public void newRequest() {
 
         mProgressBar.setVisibility(View.VISIBLE);
-        int TIME_OUT = 800000;
-
+        final int TIME_OUT = 800000;
         String url = "https://wall.alphacoders.com/api2.0/get.php?auth=62f6061416e9f81fc4915afb93980778&method=sub_category_list&id=31";
 
-        Map<String, String> params = new HashMap<String, String>();
-        params.put("device_token", "");
 
-        CustomRequest sendToken = new CustomRequest(Request.Method.GET, url, null, new Response.Listener<String>() {
+        CustomRequestWithHeader request = new CustomRequestWithHeader(Request.Method.GET, url, null, new Response.Listener<ResponseModel>() {
             @Override
-            public void onResponse(String response) {
+            public void onResponse(ResponseModel response) {
                 mProgressBar.setVisibility(View.GONE);
-                Timber.d(response);
-                mTextViewResponse.setText(response);
+                showResponse(response);
             }
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-
                 mProgressBar.setVisibility(View.GONE);
-                if (error instanceof TimeoutError || error instanceof NoConnectionError) {
-                    Toast.makeText(getApplicationContext(), "No Internet connection", Toast.LENGTH_SHORT).show();
-                } else {
-                    NetworkResponse networkResponse = error.networkResponse;
-                    int x = networkResponse.statusCode;
-                    Timber.d(x + "");
-                }
+                Timber.d("error");
             }
         }) {
             @Override
@@ -112,13 +111,20 @@ public class MainActivity extends AppCompatActivity {
                 return headers;
             }
         };
-
-        sendToken.setRetryPolicy(new DefaultRetryPolicy(
+        request.setRetryPolicy(new DefaultRetryPolicy(
                 TIME_OUT,
                 DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
                 DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
-        VolleySingleton.getsInstance().addToRequestQueue(sendToken);
+        VolleySingleton.getsInstance().addToRequestQueue(request);
+    }
+
+    private void showResponse(ResponseModel response) {
+        mTextViewHeaders.setText(response.getResponseHeader().toString());
+        mTextViewResponse.setText(response.getResponse());
+        mTextViewStatusCode.setText(response.getStatusCode()+"");
+        mTextViewTime.setText(response.getNetworkTime()+" ms");
 
     }
+
 
 }
