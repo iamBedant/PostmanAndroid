@@ -3,4 +3,85 @@
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="default_left_padding">48dp</dimen>
+
+
+    <dimen name="padding_xxxsmall">2dp</dimen>
+    <dimen name="padding_xxsmall">3dp</dimen>
+    <dimen name="padding_xsmall">5dp</dimen>
+    <dimen name="padding_x_small">6dp</dimen>
+    <dimen name="padding_small">8dp</dimen>
+    <dimen name="padding_lllmedium">10dp</dimen>
+    <dimen name="padding_llmedium">12dp</dimen>
+    <dimen name="padding_xllmedium">14dp</dimen>
+    <dimen name="padding_moreclickable">13dp</dimen>
+    <dimen name="padding_lmedium">17dp</dimen>
+    <dimen name="padding_medium">20dp</dimen>
+    <dimen name="padding_normal">10dp</dimen>
+    <dimen name="padding_large">25dp</dimen>
+    <dimen name="padding_xlarge">30dp</dimen>
+    <dimen name="padding_xxlarge">35dp</dimen>
+    <dimen name="padding_xllarge">40dp</dimen>
+    <dimen name="padding_xlllarge">45dp</dimen>
+    <dimen name="padding_xxxlarge">50dp</dimen>
+    <dimen name="padding_xxxxlarge">60dp</dimen>
+    <dimen name="dialog_padding">14dp</dimen>
+    <dimen name="dialog_padding_small">6dp</dimen>
+    <dimen name="padding_gym_top">22dp</dimen>
+
+    <!-- Margin -->
+    <dimen name="margin_xxxsmall">2dp</dimen>
+    <dimen name="margin_xxxxsmall">3dp</dimen>
+    <dimen name="margin_xxsmall">5dp</dimen>
+    <dimen name="margin_xsmall">8dp</dimen>
+    <dimen name="margin_lsmall">10dp</dimen>
+    <dimen name="margin_small">12dp</dimen>
+    <dimen name="margin_llmedium">15dp</dimen>
+    <dimen name="margin_lllmedium">17dp</dimen>
+    <dimen name="margin_lmedium">20dp</dimen>
+    <dimen name="margin_medium">25dp</dimen>
+    <dimen name="margin_llllarge">30dp</dimen>
+    <dimen name="margin_large">35dp</dimen>
+    <dimen name="margin_llarge">40dp</dimen>
+    <dimen name="margin_xlarge">45dp</dimen>
+    <dimen name="margin_xxlarge">56dp</dimen>
+    <dimen name="margin_xxxlarge">68dp</dimen>
+    <dimen name="margin_xxxxlarge">80dp</dimen>
+    <dimen name="margin_xxxxlarge_new">100dp</dimen>
+    <dimen name="margin_xxxxllarge">115dp</dimen>
+    <dimen name="margin_xxxxxlarge">126dp</dimen>
+    <dimen name="margin_xxxxxllarge">160dp</dimen>
+    <dimen name="margin_xxxxxxlarge">145dp</dimen>
+    <dimen name="margin_citrus_login_signup">170dp</dimen>
+    <dimen name="margin_xxxxlllarge">95dp</dimen>
+    <dimen name="margin_xxxxllllarge">90dp</dimen>
+    <dimen name="margin_xmedium">22dp</dimen>
+    <dimen name="margin_xllarge">50dp</dimen>
+    <dimen name="margin_xylarge">64dp</dimen>
+    <dimen name="margin_zlarge">106dp</dimen>
+    <dimen name="margin_plarge">120dp</dimen>
+    <dimen name="margin_qlarge">74dp</dimen>
+    <dimen name="margin_pplarge">130dp</dimen>
+
+
+
+    <!-- TextSize -->
+    <dimen name="textsize_xxsmall">6sp</dimen>
+    <dimen name="textsize_xssmall">7sp</dimen>
+    <dimen name="textsize_xsmall">8sp</dimen>
+    <dimen name="textsize_ssmall">9sp</dimen>
+    <dimen name="textsize_small">10sp</dimen>
+    <dimen name="textsize_llllmedium">11sp</dimen>
+    <dimen name="textsize_llllmedium1">12sp</dimen>
+    <dimen name="textsize_lllmedium">13sp</dimen>
+    <dimen name="textsize_llmedium">15sp</dimen>
+    <dimen name="textsize_lmedium">14sp</dimen>
+    <dimen name="textsize_medium">16sp</dimen>
+    <dimen name="textsize_x_medium">14sp</dimen>
+    <dimen name="textsize_xmedium">18sp</dimen>
+    <dimen name="textsize_large">24sp</dimen>
+    <dimen name="textsize_xlarge">28sp</dimen>
+    <dimen name="textsize_xxlarge">38sp</dimen>
+    <dimen name="textsize_xxxlarge">40sp</dimen>
+    <dimen name="textsize_xxxxlarge">60sp</dimen>
+
 </resources>

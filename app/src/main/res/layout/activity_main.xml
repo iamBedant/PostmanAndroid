@@ -23,7 +23,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingLeft="@dimen/default_left_padding"
-                android:text="PostmanAndroid"
+                android:text="@string/app_name"
                 android:textColor="@color/color_white" />
 
         </android.support.v7.widget.Toolbar>
