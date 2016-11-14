@@ -21,3 +21,9 @@ allprojects {
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
+
+ext {
+    // dependencies versions
+    supportLibraryVersion = '25.0.0'
+    playServicesVersion = '9.6.1'
+}

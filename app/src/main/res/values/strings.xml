@@ -7,4 +7,9 @@
     <string name="request_params">Params</string>
     <string name="request_header">Header</string>
     <string name="request_body">Body</string>
+    <string name="add">add</string>
+    <string name="key_hint">key</string>
+    <string name="value_hint">Value</string>
+    <string name="make_request">Request</string>
+    <string name="delete_param">delete</string>
 </resources>

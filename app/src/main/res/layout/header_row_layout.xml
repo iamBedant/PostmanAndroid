@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:layout_margin="@dimen/margin_small"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <EditText
+        android:layout_weight="4"
+        android:layout_width="0dp"
+        android:id="@+id/key_data"
+        app:layout_widthPercent="40%"
+        android:hint="@string/key_hint"
+        android:maxLines="1"
+        android:layout_height="wrap_content"/>
+    <EditText
+        android:layout_width="0dp"
+        android:layout_weight="5"
+        android:maxLines="1"
+        android:id="@+id/value_data"
+        app:layout_widthPercent="50%"
+        android:hint="@string/value_hint"
+        android:layout_height="wrap_content"/>
+    <ImageView
+        android:layout_weight="1"
+        android:layout_width="0dp"
+        android:layout_gravity="center"
+        android:src="@drawable/ic_delete"
+        app:layout_widthPercent="10%"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/delete_param" />
+</LinearLayout>
