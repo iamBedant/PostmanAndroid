@@ -16,13 +16,13 @@ import java.util.Map;
  * Created by @iamBedant on 07/11/16.
  */
 
-public class CustomRequestWithHeader extends Request<ResponseModel> {
+public class CustomRequest extends Request<ResponseModel> {
 
     private Listener<ResponseModel> listener;
     private Map<String, String> params;
 
-    public CustomRequestWithHeader(int method, String url, Map<String, String> params,
-                                   Listener<ResponseModel> reponseListener, ErrorListener errorListener) {
+    public CustomRequest(int method, String url, Map<String, String> params,
+                         Listener<ResponseModel> reponseListener, ErrorListener errorListener) {
         super(method, url, errorListener);
         this.listener = reponseListener;
         this.params = params;
@@ -33,7 +33,6 @@ public class CustomRequestWithHeader extends Request<ResponseModel> {
         return params;
     }
 
-    ;
 
     @Override
     protected void deliverResponse(ResponseModel response) {
@@ -45,7 +44,7 @@ public class CustomRequestWithHeader extends Request<ResponseModel> {
         try {
             String jsonString = new String(response.data,
                     HttpHeaderParser.parseCharset(response.headers));
-            return Response.success(new ResponseModel(response.headers, jsonString,response.statusCode, response.networkTimeMs),
+            return Response.success(new ResponseModel(response.headers, jsonString, response.statusCode, response.networkTimeMs),
                     HttpHeaderParser.parseCacheHeaders(response));
         } catch (UnsupportedEncodingException e) {
             return Response.error(new ParseError(e));
